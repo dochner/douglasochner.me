@@ -1,0 +1,54 @@
+import { serverQueryContent } from '#content/server'
+import dayjs from 'dayjs'
+import type { FeedOptions } from 'feed'
+import { Feed } from 'feed'
+import type { H3Event } from 'h3'
+
+export const createFeed = async(event: H3Event) => {
+  const domain = useRuntimeConfig().public.domain
+
+  const posts = await serverQueryContent(event)
+    .where({
+      type: 'post',
+      _partial: false,
+    })
+    .sort({ _file: -1, $numeric: true })
+    .find()
+
+  const feedOptions: FeedOptions = {
+    title: 'Douglas Ochner',
+    description: 'Douglas Ochner\'s Portfolio',
+    id: `${domain}/`,
+    link: `${domain}/`,
+    image: `${domain}/avatar.png`,
+    favicon: `${domain}/logo.png`,
+    copyright: `CC BY-NC-SA 4.0 ${dayjs().get('year')} © Douglas Ochner`,
+    feedLinks: {
+      json: `${domain}/feed.json`,
+      atom: `${domain}/feed.atom`,
+      rss: `${domain}/feed.xml`,
+    },
+    author: {
+      name: 'Douglas Ochner',
+      email: 'me@hanlee.co',
+      link: domain,
+    },
+  }
+
+  const feed = new Feed(feedOptions)
+
+  posts.forEach((post) => {
+    const postLink = new URL(post._path!, domain).toString()
+    feed.addItem({
+      title: post.title ?? '-',
+      id: postLink,
+      link: postLink,
+      date: new Date(post.date),
+      description: post.description,
+      image: post.image.startsWith('/') ? new URL(post.image, domain).toString() : post.image,
+      author: [feedOptions.author!],
+    })
+  })
+
+  return feed
+}
