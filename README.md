@@ -1,4 +1,4 @@
-**[ochner.com.br](https://ochner.com.br)**
+**[douglasochner.me](https://douglasochner.me)**
 
 my personal website powered by [Nuxt v3](https://nuxt.com/)
 

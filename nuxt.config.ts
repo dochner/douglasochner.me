@@ -26,7 +26,7 @@ export default defineNuxtConfig({
       title: 'Douglas Gabriel Ochner',
       meta: [
         { property: 'og:title', content: 'Douglas Gabriel Ochner' },
-        { property: 'og:image', content: 'https://ochner.com.br/avatar.png' },
+        { property: 'og:image', content: 'https://douglasochner.me/avatar.png' },
         { property: 'og:type', content: 'website' },
         { name: 'description', content: 'Douglas Gabriel Ochner\'s Portfolio' },
         { name: 'twitter:card', content: 'summary_large_image' },
@@ -63,7 +63,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      domain: 'https://ochner.com.br',
+      domain: 'https://douglasochner.me',
     },
   },
   nitro: {
