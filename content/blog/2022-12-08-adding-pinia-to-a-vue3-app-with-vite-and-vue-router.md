@@ -1,10 +1,10 @@
 ---
 title: "Adding Pinia Store to a Vue.js 3 App with Vite.js and Vue Router"
 author: dochner
-type: post
 lang: en
 date: 2022-12-08T20:48:17.385Z
 description: This article will provide a step-by-step guide on how to add Pinia store to a Vue.js 3 app built with Vite.js and Vue Router, including setting up the store and examples of how to use it in the application.
+type: post
 _path: /blog/adding-pinia-to-a-vue3-app-with-vite-and-vue-router
 categories:
   - Pinia

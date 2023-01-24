@@ -47,7 +47,11 @@ useHead({
   <div class="document-driven-page">
     <NuxtLayout :name="layout || 'default'">
       <div v-if="page">
-        <div v-if="page.title" class="max-w-screen-md m-auto mb-8">
+        <div
+          v-if="page.title"
+          class="m-auto mb-8"
+          :class="{ 'max-w-screen-md': page.type === 'post' }"
+        >
           <p v-if="page.date" class="opacity-50 -mt-2 mb-5">
             {{ formatDate(page.date) }}
           </p>

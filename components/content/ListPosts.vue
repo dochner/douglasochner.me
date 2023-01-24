@@ -5,7 +5,7 @@ import type { QueryBuilderParams } from "@nuxt/content-edge/dist/runtime/types";
 const route = useRoute();
 
 const query = ref<QueryBuilderParams>({
-  path: "/posts",
+  path: "/blog",
   without: ["excerpt", "body"],
   sort: [{ _file: -1, $numeric: true }],
 });
