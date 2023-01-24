@@ -5,9 +5,7 @@ import type { H3Event } from "h3";
 import { serverQueryContent } from "#content/server";
 
 export const createFeed = async (event: H3Event) => {
-  const domain = useRuntimeConfig().public.domain;
-
-  console.log(event);
+  const domain = "https://douglasochner.me";
 
   const posts = await serverQueryContent(event)
     .where({
@@ -47,7 +45,7 @@ export const createFeed = async (event: H3Event) => {
       link: postLink,
       date: new Date(post.date),
       description: post.description,
-      image: post.image.startsWith("/")
+      image: post?.image?.startsWith("/")
         ? new URL(post.image, domain).toString()
         : post.image,
       author: [feedOptions.author!],
