@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 
-const modes = ["system", "dark", "light"];
+const modes = ["dark", "light"];
 
 const toggle = () => {
   colorMode.preference =
@@ -15,8 +15,7 @@ const toggle = () => {
     class="p-1 flex justify-center items-center"
     @click="toggle()"
   >
-    <div v-if="$colorMode.preference === 'system'" i-bx-laptop />
-    <div v-else-if="$colorMode.preference === 'dark'" i-bx-moon />
+    <div v-if="$colorMode.preference === 'dark'" i-bx-moon />
     <div v-else i-bx-sun />
   </button>
 </template>

@@ -34,7 +34,7 @@ const { page } = useContent();
       <div i-bx-bxl-twitter />
     </a>
     <a
-      :href="`https://lineit.line.me/share/ui?url=${currentPath}`"
+      :href="`https://www.linkedin.com/sharing/share-offsite/?url=${currentPath}`"
       class="icon-link"
       target="_blank"
       rel="noopener"

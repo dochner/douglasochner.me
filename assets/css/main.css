@@ -4,7 +4,7 @@
   --c-text: #111827;
   --c-scrollbar: #e5e7eb;
   --c-scrollbar-hover: #d1d5db;
-  --header-height: 4.5rem;
+  --header-height: 100px;
 }
 
 html.dark {
@@ -36,6 +36,8 @@ html {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--c-scrollbar) bg-transparent;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 *::-webkit-scrollbar {

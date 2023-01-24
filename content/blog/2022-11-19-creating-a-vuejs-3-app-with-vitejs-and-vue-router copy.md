@@ -4,7 +4,7 @@ author: dochner
 lang: en
 description: This article will provide a step-by-step guide on how to create a Vue.js 3 app with Vite.js and Vue Router, including setting up the development environment, adding Vue Router and building a basic application.
 date: 2022-11-19T00:22:34.624Z
-type: post
+type: blog
 _path: /blog/creating-a-vuejs-3-app-with-vitejs-and-vue-router
 tags:
   - Vue.js

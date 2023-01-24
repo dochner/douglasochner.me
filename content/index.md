@@ -1,6 +1,5 @@
 ---
-title: Posts
 layout: default
 ---
 
-:ListPosts
+<AboutMe />
