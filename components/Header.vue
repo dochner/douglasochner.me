@@ -13,7 +13,7 @@ if (typeof document !== "undefined") {
 
 <template>
   <header
-    class="fixed top-0 left-0 z-30 h-$header-size bg-secondary/20 backdrop-blur-lg row shadow-md w-full backdrop-blur-sm"
+    class="fixed top-0 left-0 z-30 h-$header-size bg-white/4 backdrop-blur-lg row shadow-md w-full backdrop-blur-sm"
   >
     <div
       class="w-col-12 md:w-col-10 md:offset-1 xl:w-col-8 xl:offset-2 row justify-between items-center pa-md"
@@ -26,8 +26,56 @@ if (typeof document !== "undefined") {
         ochner
       </NuxtLink>
 
+      <div class="flex-grow"></div>
+
+      <div class="flex-500px lt-md:hidden">
+        <nav class="nav row dark:text-gray-200 text-xl fw-bold font-display">
+          <NuxtLink
+            exact-active-class="bg-primary-600"
+            to="/"
+            title="Home"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
+          >
+            <span class="block">Home</span>
+          </NuxtLink>
+
+          <NuxtLink
+            exact-active-class="bg-primary-600"
+            to="/blog"
+            title="Blog"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
+          >
+            <span class="block">Blog</span>
+          </NuxtLink>
+          <NuxtLink
+            exact-active-class="bg-primary-600"
+            to="/bookmarks"
+            title="Bookmarks"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
+          >
+            <span class="block">Bookmarks</span>
+          </NuxtLink>
+
+          <div class="flex gap-4 p-4 mt-auto text-2xl">
+            <IconLink href="https://github.com/dochner" title="GitHub">
+              <div i-bx-bxl-github />
+            </IconLink>
+            <IconLink
+              href="https://linkedin.com/in/douglasochner"
+              title="Linkedin"
+            >
+              <div i-bx-bxl-linkedin />
+            </IconLink>
+
+            <IconLink href="/feed.xml" title="RSS" new-tab>
+              <div i-bx-rss style="font-size: 1.25rem" />
+            </IconLink>
+          </div>
+        </nav>
+      </div>
+
       <button
-        class="bg-primary text-white shadow-4 transition-all duration-500 absolute right-md md:right-1/12 xl:right-2/12 active:shadow-none rounded-15px block w-48px h-48px text-center row items-center justify-center"
+        class="bg-primary text-white shadow-4 transition-all duration-500 hidden !lt-md:block absolute right-md md:right-1/12 xl:right-2/12 active:shadow-none rounded-15px block w-48px h-48px text-center items-center justify-center"
         :class="{ 'z-3 !right-md': isOpen }"
         @click="toggle()"
       >
@@ -47,15 +95,6 @@ if (typeof document !== "undefined") {
         class="w-full sm:w-350px bg-dark-700 p-4 pt-$header-height"
         @click.stop
       >
-        <!-- <button
-          class="bg-primary text-white shadow-4 transition-all active:shadow-none rounded-15px block w-48px h-48px text-center row items-center justify-center absolute top-md right-md"
-          @click="toggle()"
-        >
-          <div
-            class="text-lg i-bx-menu-alt-right mx-auto"
-            :class="{ 'i-bx-x': isOpen }"
-          />
-        </button> -->
         <nav class="nav grid dark:text-gray-200 text-3xl fw-bold font-display">
           <NuxtLink
             exact-active-class="bg-primary-600"
@@ -65,30 +104,7 @@ if (typeof document !== "undefined") {
           >
             <span class="block">Home</span>
           </NuxtLink>
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/projects"
-            title="Projects"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Projects</span>
-          </NuxtLink>
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/contact-me"
-            title="Contact me"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Contact me</span>
-          </NuxtLink>
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/about"
-            title="About"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">About</span>
-          </NuxtLink>
+
           <NuxtLink
             exact-active-class="bg-primary-600"
             to="/blog"
@@ -117,20 +133,11 @@ if (typeof document !== "undefined") {
             <div i-bx-bxl-linkedin />
           </IconLink>
 
-          <ToggleTheme />
-
           <IconLink href="/feed.xml" title="RSS" new-tab>
             <div i-bx-rss style="font-size: 1.25rem" />
           </IconLink>
         </div>
       </div>
-      <!-- <button
-        class="bg-primary text-white shadow-1 rounded-15px block w-48px h-48px text-center row items-center justify-center !lt-md:hidden"
-        @click="toggle()"
-      >
-        <div class="
-         i-bx-menu-alt-right mx-auto" />
-      </button> -->
     </aside>
   </header>
 </template>
