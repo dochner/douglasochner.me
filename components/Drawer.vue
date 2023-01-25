@@ -11,11 +11,11 @@ defineEmits(["update:isOpen"]);
     class="h-[calc(100vh-96px)] flex flex-col bg-$c-bg md:(sticky top-12) lt-md:(fixed pt-10 px-3 w-full h-full z-20)"
     :class="{ 'lt-md:!hidden': !isOpen }"
   >
-    <nav class="nav grid dark:text-gray-200">
+    <nav class="nav grid text-gray-200">
       <NuxtLink
         to="/"
         title="Home"
-        class="flex items-center gap-3 px-5 py-3 hover:bg-white dark:hover:bg-dark-900 rounded-xl transition"
+        class="flex items-center gap-3 px-5 py-3 :hover:bg-dark-900 rounded-xl transition"
       >
         <div i-bx-home />
         <span class="block text-lg">Home</span>
@@ -23,7 +23,7 @@ defineEmits(["update:isOpen"]);
       <NuxtLink
         to="/blog"
         title="Blog"
-        class="flex items-center gap-3 px-5 py-3 hover:bg-white dark:hover:bg-dark-900 rounded-xl transition"
+        class="flex items-center gap-3 px-5 py-3 :hover:bg-dark-900 rounded-xl transition"
       >
         <div i-bx-bxl-blogger />
         <span class="block text-lg">Blog</span>
@@ -31,7 +31,7 @@ defineEmits(["update:isOpen"]);
       <NuxtLink
         to="/bookmarks"
         title="Bookmarks"
-        class="flex items-center gap-3 px-5 py-3 hover:bg-white dark:hover:bg-dark-900 rounded-xl transition"
+        class="flex items-center gap-3 px-5 py-3 :hover:bg-dark-900 rounded-xl transition"
       >
         <div i-bx-bookmark />
         <span class="block text-lg">Bookmarks</span>

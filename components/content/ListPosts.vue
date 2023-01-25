@@ -38,7 +38,7 @@ watch(
       <ContentList v-slot="{ list }" :query="query">
         <li v-for="post in list" :key="post._path" class="before:hidden !pl-0">
           <NuxtLink
-            class="block w-full h-full bg-white dark:bg-dark-900 rounded-md overflow-hidden flex flex-col group"
+            class="block w-full h-full bg-primary-900 rounded-md overflow-hidden flex flex-col group"
             :to="post._path"
           >
             <div v-if="post.image" class="relative w-full h-50 overflow-hidden">

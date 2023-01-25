@@ -1,11 +1,17 @@
 <script setup lang="ts">
 const isOpen = ref(false);
 const toggle = useToggle(isOpen);
+
+const body = document.querySelector("body");
+
+watch(isOpen, (value) => {
+  body?.classList.toggle("overflow-hidden", value);
+});
 </script>
 
 <template>
   <header
-    class="fixed top-0 left-0 z-30 h-$header-size bg-transparent row shadow-md w-full bg-light dark:bg-dark"
+    class="fixed top-0 left-0 z-30 h-$header-size bg-black/20 row shadow-md w-full backdrop-blur-sm"
   >
     <div
       class="w-col-12 md:w-col-10 md:offset-1 xl:w-col-8 xl:offset-2 row justify-between items-center pa-md"
@@ -15,7 +21,7 @@ const toggle = useToggle(isOpen);
         to="/"
         focusable="false"
       >
-        Ochner
+        ochner
       </NuxtLink>
 
       <button
@@ -30,12 +36,12 @@ const toggle = useToggle(isOpen);
     </div>
 
     <aside
-      class="h-screen row justify-end w-full backdrop-blur-sm bg-black/20 dark:bg-white/12 absolute top-0 transition-all duration-250 transform scale-100 shadow-2 origin-left"
+      class="h-screen row justify-end w-full backdrop-blur-sm bg-white/12 absolute top-0 transition-all duration-250 transform scale-100 shadow-2 origin-left"
       :class="{ 'scale-0 opacity-0 invisible': !isOpen }"
       @click="toggle()"
     >
       <div
-        class="w-full sm:w-350px bg-white dark:bg-dark-700 p-4 pt-$header-height"
+        class="w-full sm:w-350px bg-dark-700 p-4 pt-$header-height"
         @click.stop
       >
         <button
@@ -49,44 +55,50 @@ const toggle = useToggle(isOpen);
         </button>
         <nav class="nav grid dark:text-gray-200 text-3xl fw-bold font-display">
           <NuxtLink
+            exact-active-class="bg-primary-600"
             to="/"
             title="Home"
-            class="flex items-center gap-3 px-5 py-3 hover:bg-primary-100 dark:hover:bg-primary-600 rounded-xl"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
           >
             <span class="block">Home</span>
           </NuxtLink>
           <NuxtLink
+            exact-active-class="bg-primary-600"
             to="/projects"
             title="Projects"
-            class="flex items-center gap-3 px-5 py-3 hover:bg-primary-100 dark:hover:bg-primary-600 rounded-xl"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
           >
             <span class="block">Projects</span>
           </NuxtLink>
           <NuxtLink
+            exact-active-class="bg-primary-600"
             to="/contact-me"
             title="Contact me"
-            class="flex items-center gap-3 px-5 py-3 hover:bg-primary-100 dark:hover:bg-primary-600 rounded-xl"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
           >
             <span class="block">Contact me</span>
           </NuxtLink>
           <NuxtLink
+            exact-active-class="bg-primary-600"
             to="/about"
             title="About"
-            class="flex items-center gap-3 px-5 py-3 hover:bg-primary-100 dark:hover:bg-primary-600 rounded-xl"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
           >
             <span class="block">About</span>
           </NuxtLink>
           <NuxtLink
+            exact-active-class="bg-primary-600"
             to="/blog"
             title="Blog"
-            class="flex items-center gap-3 px-5 py-3 hover:bg-primary-100 dark:hover:bg-primary-600 rounded-xl"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
           >
             <span class="block">Blog</span>
           </NuxtLink>
           <NuxtLink
+            exact-active-class="bg-primary-600"
             to="/bookmarks"
             title="Bookmarks"
-            class="flex items-center gap-3 px-5 py-3 hover:bg-primary-100 dark:hover:bg-primary-600 rounded-xl"
+            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
           >
             <span class="block">Bookmarks</span>
           </NuxtLink>
