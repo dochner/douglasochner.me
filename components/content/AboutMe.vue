@@ -41,19 +41,16 @@
       </div>
     </section>
 
-    <section id="projects" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+    <section id="projects" class="sticky top-0 h-[50vh] w-col-12">
       <ListProjects />
     </section>
-    <section id="testimonials" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+    <section id="testimonials" class="sticky top-0 h-[50vh] w-col-12">
       <ListTestimonials />
     </section>
-    <section id="blog" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+    <section id="blog" class="sticky top-0 h-[50vh] w-col-12">
       <ListPosts />
     </section>
-    <section
-      id="get-in-touch"
-      class="sticky top-0 h-[50vh] w-col-12 bg-dark px-md"
-    >
+    <section id="get-in-touch" class="sticky top-0 h-[50vh] w-col-12 px-md">
       <div
         class="rounded-[20px] column z-2 h-full w-auto min-w-0 min-h-0 self-stretch justify-self-stretch relative m-0 z-1"
       >
@@ -90,7 +87,7 @@
         </div>
       </div>
     </section>
-    <section id="newsletter" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+    <section id="newsletter" class="sticky top-0 h-[50vh] w-col-12">
       newsletter
     </section>
   </div>
