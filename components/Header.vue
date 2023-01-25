@@ -2,16 +2,18 @@
 const isOpen = ref(false);
 const toggle = useToggle(isOpen);
 
-const body = document.querySelector("body");
+if (typeof document !== "undefined") {
+  const body = document?.querySelector("body");
 
-watch(isOpen, (value) => {
-  body?.classList.toggle("overflow-hidden", value);
-});
+  watch(isOpen, (value) => {
+    body?.classList.toggle("overflow-hidden", value);
+  });
+}
 </script>
 
 <template>
   <header
-    class="fixed top-0 left-0 z-30 h-$header-size bg-black/20 row shadow-md w-full backdrop-blur-sm"
+    class="fixed top-0 left-0 z-30 h-$header-size bg-secondary/20 backdrop-blur-lg row shadow-md w-full backdrop-blur-sm"
   >
     <div
       class="w-col-12 md:w-col-10 md:offset-1 xl:w-col-8 xl:offset-2 row justify-between items-center pa-md"
@@ -25,7 +27,8 @@ watch(isOpen, (value) => {
       </NuxtLink>
 
       <button
-        class="bg-primary text-white shadow-4 transition-all active:shadow-none rounded-15px block w-48px h-48px text-center row items-center justify-center"
+        class="bg-primary text-white shadow-4 transition-all duration-500 absolute right-md md:right-1/12 xl:right-2/12 active:shadow-none rounded-15px block w-48px h-48px text-center row items-center justify-center"
+        :class="{ 'z-3 !right-md': isOpen }"
         @click="toggle()"
       >
         <div
@@ -44,7 +47,7 @@ watch(isOpen, (value) => {
         class="w-full sm:w-350px bg-dark-700 p-4 pt-$header-height"
         @click.stop
       >
-        <button
+        <!-- <button
           class="bg-primary text-white shadow-4 transition-all active:shadow-none rounded-15px block w-48px h-48px text-center row items-center justify-center absolute top-md right-md"
           @click="toggle()"
         >
@@ -52,7 +55,7 @@ watch(isOpen, (value) => {
             class="text-lg i-bx-menu-alt-right mx-auto"
             :class="{ 'i-bx-x': isOpen }"
           />
-        </button>
+        </button> -->
         <nav class="nav grid dark:text-gray-200 text-3xl fw-bold font-display">
           <NuxtLink
             exact-active-class="bg-primary-600"

@@ -1,58 +1,99 @@
 <script setup lang="ts"></script>
 
 <template>
-  <article class="row">
-    <section class="h-screen relative w-col-12">
-      <div class="row absolute top-0 w-full h-full h-screen">
-        <div class="h-screen absolute top-0 relative w-full z-1">
+  <div class="row h-full relative">
+    <section
+      class="h-[120vh] w-col-12 row justify-end lt-sm:items-end sm:items-center p-md"
+    >
+      <div
+        class="border border-dark shadow-sm bg-black/20 backdrop-blur-sm p-xl rounded-2xl z-10 max-w-xl overflow-hidden"
+      >
+        <h1
+          class="font-display fw-bold text-white text-3xl sm:text-4xl md:text-7xl hero-title w-full"
+        >
+          Douglas Ochner
+        </h1>
+
+        <p class="text-lg leading-loose my-xl">
+          I'm a skilled Frontend developer with a focus in Vue and Vite. I've
+          got the experience and expertise to bring your vision to life.
+          <br />
+          Let's create something amazing together!
+          <br />
+        </p>
+
+        <NuxtLink
+          to="/contact-me"
+          class="py-4 px-12 bg-primary shadow-sm rounded-full shadow-primary active:shadow-none"
+        >
+          Get in Touch
+        </NuxtLink>
+      </div>
+
+      <div class="row absolute top-0 w-full h-full sm:left--48 md:left-0">
+        <div class="h-screen sticky top-0 relative z-1">
           <img
             src="/avatar-full-no-bg.png"
-            class="avatar-hero object-fit top-0 lg:left-0 md:h-full object-fit"
+            class="hero__avatar-img h-screen w-full object-contain"
             alt="Avatar Douglas Ochner"
           />
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+      <ListProjects />
+    </section>
+    <section id="testimonials" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+      <ListTestimonials />
+    </section>
+    <section id="blog" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
+      <ListPosts />
+    </section>
+    <section
+      id="get-in-touch"
+      class="sticky top-0 h-[50vh] w-col-12 bg-dark px-md"
+    >
+      <div
+        class="rounded-[20px] column z-2 h-full w-auto min-w-0 min-h-0 self-stretch justify-self-stretch relative m-0 z-1"
+      >
+        <img
+          src="@/assets/images/cta-bg-768w.webp"
+          class="object-cover object-center w-full h-full rounded-[20px] absolute top-0 left-0"
+          srcset="
+            @/assets/images/cta-bg-320w.webp 320w,
+            @/assets/images/cta-bg-768w.webp 768w
+          "
+          alt="Get in Touch"
+          sizes="(max-width: 600px) 320px,100%"
+        />
 
         <div
-          class="px-12 text-center sm:text-left absolute w-xs lt-sm:bottom-0 sm:top-1/2 lt-sm:left-1/2 lt-md:-translate-x-1/2 sm:right-0 box-content z-2 md:transform -translate-y-1/2 md:px-0 md:w-1/2"
+          class="column items-center sm:items-start justify-center z-3 absolute text-center sm:text-left my-auto h-full p-lg w-full sm:w-col-7 md:w-col-4"
         >
-          <h1
-            class="font-display fw-bold text-white text-4xl md:text-7xl hero-title w-full"
-          >
-            Douglas Ochner
-          </h1>
+          <h2 class="fw-bold text-3xl font-display w-col-12 mb-md">
+            <span class="text-secondary">Let's</span> create something
+            <span class="text-secondary">amazing</span> together!
+          </h2>
 
-          <p class="sm:w-xl lg:w-3xl text-lg leading-loose my-xl">
-            Let's unlock the full potential of your website, I'm a skilled
-            Frontend developer with a focus in Vue and Vite. From design to
-            development, I've got the experience and expertise to bring your
-            vision to life. Get in touch today and let's create something
-            amazing together!
+          <p class="font-display text-sm text-light-800 w-col-12 mb-md">
+            I'm always open to discussing and product/work idea, or partnership
+            opportunities.
           </p>
 
           <NuxtLink
             to="/contact-me"
-            class="py-2 px-12 min-h-12 bg-primary shadow-sm rounded-full shadow-primary active:shadow-none"
+            class="py-2 px-12 bg-secondary shadow-sm rounded-full shadow-secondary active:shadow-none"
           >
             Get in Touch
           </NuxtLink>
         </div>
       </div>
     </section>
-
-    <section id="projects" class="h-[50vh] w-col-12 bg-primary/90">
-      projects
-    </section>
-    <section id="testimonials" class="h-[50vh] w-col-12 bg-primary/70">
-      testimonials
-    </section>
-    <section id="blog" class="h-[50vh] w-col-12 bg-primary/60">blog</section>
-    <section id="get-in-touch" class="h-[50vh] w-col-12 bg-primary/50">
-      get in touch
-    </section>
-    <section id="newsletter" class="h-[50vh] w-col-12 bg-primary/30">
+    <section id="newsletter" class="sticky top-0 h-[50vh] w-col-12 bg-dark">
       newsletter
     </section>
-  </article>
+  </div>
 </template>
 
 <style scoped>
@@ -60,12 +101,8 @@
   --hero-t-shadow: #1d1d1daa;
 }
 
-.avatar-hero {
+.hero__avatar-img {
   filter: drop-shadow(-12rem -12rem 12rem #7d38a2aa)
     drop-shadow(20rem 12rem 12rem #001f62af);
-}
-
-.hero-title {
-  filter: drop-shadow(8px 8px 8px #1d1d1dff);
 }
 </style>

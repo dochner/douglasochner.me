@@ -4,7 +4,9 @@ const year = dayjs().get("year");
 </script>
 
 <template>
-  <footer class="py-8 px-6">
+  <footer
+    class="py-8 px-6 bg-gradient-to-b from-primary/40 to-secondary/20 backdrop-blur-lg"
+  >
     <div class="max-w-screen-md mx-auto opacity-50 flex">
       <span class="text-sm">
         <a
