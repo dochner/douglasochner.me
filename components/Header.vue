@@ -13,11 +13,9 @@ if (typeof document !== "undefined") {
 
 <template>
   <header
-    class="fixed top-0 left-0 z-30 h-$header-size bg-white/4 backdrop-blur-lg row shadow-md w-full backdrop-blur-sm"
+    class="fixed top-0 left-0 z-30 h-$header-height bg-white/4 backdrop-blur-lg row items-center shadow-md w-full backdrop-blur-sm box-border"
   >
-    <div
-      class="w-col-12 md:w-col-10 md:offset-1 xl:w-col-8 xl:offset-2 row justify-between items-center pa-md"
-    >
+    <div class="w-full md:max-w-screen-md mx-auto row items-center">
       <NuxtLink
         class="font-display block text-4xl fw-extrabold select-none outline-none p-4"
         to="/"
@@ -26,35 +24,16 @@ if (typeof document !== "undefined") {
         ochner
       </NuxtLink>
 
-      <div class="flex-grow"></div>
-
-      <div class="flex-500px lt-md:hidden">
-        <nav class="nav row dark:text-gray-200 text-xl fw-bold font-display">
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/"
-            title="Home"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Home</span>
-          </NuxtLink>
-
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/blog"
-            title="Blog"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Blog</span>
-          </NuxtLink>
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/bookmarks"
-            title="Bookmarks"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Bookmarks</span>
-          </NuxtLink>
+      <div class="lt-md:hidden ml-auto">
+        <nav class="row items-center text-gray-200 text-xl font-display">
+          <HeaderNavItem label="About me" to="/" icon="bx:id-card" />
+          <HeaderNavItem label="Projects" to="/projects" icon="bx:briefcase" />
+          <HeaderNavItem label="Blog" to="/blog" icon="bx:bxl-blogger" />
+          <HeaderNavItem
+            label="Contact me"
+            to="/contact-me"
+            icon="bx:message"
+          />
 
           <div class="flex gap-4 p-4 mt-auto text-2xl">
             <IconLink href="https://github.com/dochner" title="GitHub">
@@ -95,48 +74,32 @@ if (typeof document !== "undefined") {
         class="w-full sm:w-350px bg-dark-700 p-4 pt-$header-height"
         @click.stop
       >
-        <nav class="nav grid dark:text-gray-200 text-3xl fw-bold font-display">
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/"
-            title="Home"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Home</span>
-          </NuxtLink>
+        <nav class="grid gap-4 text-gray-200 text-xl font-display">
+          <HeaderNavItem label="About me" to="/" icon="bx:id-card" />
+          <HeaderNavItem label="Projects" to="/projects" icon="bx:briefcase" />
+          <HeaderNavItem label="Blog" to="/blog" icon="bx:bxl-blogger" />
+          <HeaderNavItem
+            label="Contact me"
+            to="/contact-me"
+            icon="bx:message"
+          />
 
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/blog"
-            title="Blog"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Blog</span>
-          </NuxtLink>
-          <NuxtLink
-            exact-active-class="bg-primary-600"
-            to="/bookmarks"
-            title="Bookmarks"
-            class="flex items-center gap-3 px-5 py-3 focus:hover:bg-primary-600 rounded-xl"
-          >
-            <span class="block">Bookmarks</span>
-          </NuxtLink>
+          <div class="flex gap-4 p-4 mt-auto text-2xl">
+            <IconLink href="https://github.com/dochner" title="GitHub">
+              <div i-bx-bxl-github />
+            </IconLink>
+            <IconLink
+              href="https://linkedin.com/in/douglasochner"
+              title="Linkedin"
+            >
+              <div i-bx-bxl-linkedin />
+            </IconLink>
+
+            <IconLink href="/feed.xml" title="RSS" new-tab>
+              <div i-bx-rss style="font-size: 1.25rem" />
+            </IconLink>
+          </div>
         </nav>
-        <div class="flex gap-4 p-4 mt-auto text-2xl">
-          <IconLink href="https://github.com/dochner" title="GitHub">
-            <div i-bx-bxl-github />
-          </IconLink>
-          <IconLink
-            href="https://linkedin.com/in/douglasochner"
-            title="Linkedin"
-          >
-            <div i-bx-bxl-linkedin />
-          </IconLink>
-
-          <IconLink href="/feed.xml" title="RSS" new-tab>
-            <div i-bx-rss style="font-size: 1.25rem" />
-          </IconLink>
-        </div>
       </div>
     </aside>
   </header>

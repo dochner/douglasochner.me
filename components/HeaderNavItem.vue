@@ -23,11 +23,11 @@ const linkProps = computed(() => ({
 <template>
   <NuxtLink
     v-bind="linkProps"
-    class="flex items-center gap-3 px-5 py-3 :hover:bg-dark-900 rounded-xl transition"
-    exact-active-class="bg-dark-900"
+    class="grid grid-cols-[max-content_1fr_max-content] items-center gap-3 px-5 text-lg rounded-xl transition border-px shadow-sm border-transparent shadow-transparent h-48px"
+    active-class="bg-gradient-to-r from-primary-600 to-primary-700 shadow-primary border-primary-500"
   >
-    <Icon v-if="icon" :name="icon" size="iconSize" />
+    <Icon v-if="icon" :name="icon" :size="iconSize" />
     <span> {{ label }}</span>
-    <Icon v-if="iconRight" :name="iconRight" size="iconSize" />
+    <Icon v-if="iconRight" :size="iconSize" />
   </NuxtLink>
 </template>
