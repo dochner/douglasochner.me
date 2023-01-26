@@ -3,6 +3,7 @@ import { defineNuxtConfig } from "nuxt/config";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
+    "nuxt-icon",
     "@nuxtjs/color-mode",
     "@nuxt/content-edge",
     "@unocss/nuxt",
@@ -100,6 +101,9 @@ export default defineNuxtConfig({
       clientDB: false,
       stripQueryParameters: true,
     },
+  },
+  nuxtIcon: {
+    size: "24px",
   },
   unocss: {
     uno: true,
